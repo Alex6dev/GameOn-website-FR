@@ -6,7 +6,10 @@ function editNav() {
     x.className = "topnav";
   }
 }
+function get (classe, message){
+  
 
+}
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
@@ -28,6 +31,10 @@ const conditionDutilisateur = document.getElementById("checkbox1");
 const preventEvent = document.getElementById("checkbox2");
 const btnSendForm = document.getElementById("btn-sendForm");
 let a= 0;
+let b= 0;
+let c=0;
+let d=0;
+
 
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
@@ -59,25 +66,44 @@ function first(evt){
   const regex1= new RegExp('^[a-zA-Z]{3,}')
   if (regex1.test(valFirstName)){
     let truevalFirstName = valFirstName;
-    a=1;
+    a=1; 
+    firstName.style.border="none";
+    let elt=document.getElementsByClassName("errorFirst");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="none";
+    }
      
   }else{
     a=0;
-    console.log(a);
-    /*indiquer qu'il c'est tromper*/
+    firstName.style.border="2px solid #e54858";
+    console.log('pas bon')
+    let elt=document.getElementsByClassName("errorFirst");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="block";
+    }
   }
 }
+
 function last(evt){
   const valLastName= evt.target.value ;
   const regex1= new RegExp('^[a-zA-Z]{3,}')
   if (regex1.test(valLastName)){
     const truevalLastName = valLastName;
     b=1;
+    lastName.style.border="none";
+    let elt=document.getElementsByClassName("errorLast");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="none";
+    }
     
   }else{
     b=0;
+    lastName.style.border="2px solid #e54858";
+    let elt=document.getElementsByClassName("errorLast");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="block";
+    }
     
-    /*indiquer qu'il c'est tromper*/
   }
 }
 function email(evt){
@@ -86,9 +112,18 @@ function email(evt){
   if (regex2.test(Email)){
     const truevalEmail = Email;
     c=1;
-    
+    eMail.style.border="none";
+    let elt=document.getElementsByClassName("errorEmail");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="none";
+    }
   }else{
     c=0;
+    eMail.style.border="2px solid #e54858";
+    let elt=document.getElementsByClassName("errorEmail");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="block";
+    }
     /*indiquer qu'il c'est tromper*/
   }
 }
@@ -98,10 +133,18 @@ function birt(evt){
   if (regex3.test(birthdate)){
     const truevalbirthdate = birthdate;
     d=1;
-    
+    birtDate.style.border="none";
+    let elt=document.getElementsByClassName("errorBirtdate");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="none";
+    }
   }else{
     d=0;
-    /*indiquer qu'il c'est tromper*/
+    birtDate.style.border="2px solid #e54858";
+    let elt=document.getElementsByClassName("errorBirtdate");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="block";
+    }
   }
 }
 function quantity(evt){
@@ -109,11 +152,17 @@ function quantity(evt){
   const regex3= new RegExp('[0-9]')
   if (regex3.test(quantityTourm)){
     const truevalQuantity = quantityTourm;
-    let truebolQuantity= true;
-    
+    quantityTournament.style.border="none";
+    let elt=document.getElementsByClassName("errorQuantity");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="none";
+    }
   }else{
-    let truebolQuantity= false;
-    /*indiquer qu'il c'est tromper*/
+    quantityTournament.style.border="2px solid #e54858";
+    let elt=document.getElementsByClassName("errorQuantity");
+    for(var i=0; i<elt.length;i+=1){
+      elt[i].style.display="block";
+    }
   }
 }
 function locat(evt){
@@ -135,11 +184,12 @@ function conditionF(evt){
 function sendForm(evt){
   const clickbtn=evt.target.value;
   
-  if(a===1 && b==1 && c===1 && d===1){
+  if(a===1 && b===1 && c===1 && d===1){
     console.log(" envoyer")
   }else{
     console.log('pas envoyer')
     evt.preventDefault();
+
   }
 
 }
