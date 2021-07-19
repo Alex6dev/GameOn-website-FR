@@ -118,9 +118,9 @@
                   id="birthdate"
                   name="birthdate"
                 /><br>
-                <div class="error errorBirthdate">
+                <div class="error errorBirtdate">
                   <p class="messageError">
-                    vous devez entrer votre date de naissance.
+                    veuillez entrer votre date de naissance.
                   </p>
                 </div>
               </div>
@@ -188,6 +188,7 @@
                   name="location"
                   value="Boston"
                 />
+
                 <label class="checkbox-label" for="location5">
                   <span class="checkbox-icon"></span>
                   Boston</label
@@ -204,7 +205,11 @@
                   Portland</label
                 >
               </div>
-
+              <div class="error errorVille">
+                <p class="messageError">
+                  veuillez indiquer la ville où vous avez participé au tournoi GameOn.
+                </p>
+              </div>
               <div
                 class="formData">
                 <input
@@ -218,6 +223,11 @@
                   <span class="checkbox-icon" ></span>
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
+                <div class="error errorCondition">
+                  <p class="messageError">
+                    Vous devez vérififier que vous acceptez les termes et conditions.
+                  </p>
+                </div>
                 <br>
                 <input class="checkbox-input" type="checkbox" id="checkbox2" />
                 <label class="checkbox2-label" for="checkbox2" name='prévenir évènement'>
@@ -236,6 +246,16 @@
             </form>
           </div>
         </div>
+      </div>
+      <div id="fond-confirmation">
+        <div id="box-confirmation">
+          <p id="text-confirmation">
+            Merci ! Votre réservation a été reçue.
+          </p>
+          <button class="btn-submit" id="btn-end">
+            Fermer
+          </button>
+        </div>   
       </div>
     </main>
     <footer>
