@@ -63,11 +63,11 @@ const btnSendForm = document.getElementById("btn-sendForm");
 let quantityTourm = 0;
 let a= 0;
 let b= 0;
-let c=0;
-let d=0;
-let e=0;
-let f=0;
-let j=1;
+let c= 0;
+let d= 0;
+let e= 0;
+let f= 0;
+let j= 1;
 
 
 
@@ -158,9 +158,11 @@ function quantity(evt){
     e=0;
     block(quantityTournament,boxQuantity)
   }
+
   if(quantityTourm==0){
     f=1;
-    console.log("f=1")
+  }else{
+    f=0;
   }
 }
 function locat(evt){
@@ -204,43 +206,22 @@ function sendForm(evt){
     block(quantityTournament,boxQuantity);
     evt.preventDefault();
   }else if(f!=1){
-    let elt=boxVille;
-    for(var i=0; i<elt.length;i+=1){
-      elt[i].style.display="block";
-    }
+    blockX(boxVille);
     evt.preventDefault();
   }else if(j!=1){
-    let elt=boxCondition;
-    for(var i=0; i<elt.length;i+=1){
-      elt[i].style.display="block";
-    }
+    blockX(boxCondition);
     evt.preventDefault();
   }else{
-    console.log("envoyer")
+    evt.preventDefault();
+    console.log("envoyer");
+    modalbg.style.display = "none";
     const fondConfirmation=document.getElementById("fond-confirmation");
-    let elt=fondConfirmation;
-    for(var i=0; i<elt.length;i+=1){
-      elt[i].style.display="block";
-    }
-    modalbg.stopPropagation();
-    /*
+    fondConfirmation.style.display="block";
     const btnCloseConfirmation=document.getElementById("btn-end");
     btnCloseConfirmation.addEventListener('click',closeConfirmation);
     function closeConfirmation(){
-      console.log("fait chier")
-      let elt=boxConfirmation ;
-      for(var i=0; i<elt.length;i+=1){
-        elt[i].style.display="none";
-      }
-    }*/
+      console.log("merci")
+      fondConfirmation.style.display="none";
+    }
   }
-  /*if(a===1 && b===1 && c===1 && d===1 && e===1 && f===1){
-    
-  
-  }else{
-    console.log('pas envoyer')
-    evt.preventDefault();
-
-  }*/
-  
 }
